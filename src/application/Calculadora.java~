@@ -1,0 +1,97 @@
+package application;
+
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class Calculadora extends JFrame implements ActionListener {
+	
+	JTextField T1, T2;
+	JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b0, soma, sub, mult, div, raiz, porc, result, decimal, limpar;
+	JLabel l1, l2, l3;
+
+	public static void main(String[] args) {
+		JFrame Janela = new Calculadora();
+		Janela.show();
+		WindowListener x = new WindowAdapter() {
+			public void WindowsClosing(WindowEvent e) {
+				System.exit(0);
+			}
+		};
+		Janela.addWindowListener(x);
+
+	}
+	
+	
+	Calculadora() {
+		setTitle("Calculadora");
+		setSize(400, 500);
+		setLocation(20, 20);
+		getContentPane().setBackground(Color.DARK_GRAY);
+		getContentPane().setLayout(null);
+		
+		
+		T1 = new JTextField();
+		T1.setBounds(15, 55, 355, 50);
+		T1.setBackground(Color.GRAY);
+		T1.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+		T1.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		T1.setFont(new Font("Courier New", Font.BOLD, 30));
+		T1.setEnabled(true);
+		T1.setEditable(false);
+		T1.setHorizontalAlignment(T1.RIGHT);
+		
+		T2 = new JTextField();
+		T2.setBounds(15, 15, 355, 30);
+		T2.setBackground(Color.GRAY);
+		T2.setBorder(BorderFactory.createEmptyBorder(5, 10, 5, 10));
+		T2.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		T2.setFont(new Font("Courier New", Font.BOLD, 20));
+		T2.setEnabled(true);
+		T2.setEditable(false);
+		T2.setHorizontalAlignment(T2.RIGHT);
+		
+		limpar = new JButton();
+		limpar.setText("C");
+		limpar.setBounds(15, 115, 50, 50);
+		limpar.setBackground(Color.GRAY);
+		limpar.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		limpar.setFont(new Font("Courier New", Font.BOLD, 30));
+		
+		raiz = new JButton();
+		raiz.setText("R");
+		raiz.setBounds(75, 115, 50, 50);
+		raiz.setBackground(Color.GRAY);
+		raiz.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		raiz.setFont(new Font("Courier New", Font.BOLD, 30));
+		
+		porc = new JButton();
+		porc.setText("%");
+		porc.setBounds(135, 115, 50, 50);
+		porc.setBackground(Color.GRAY);
+		porc.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		porc.setFont(new Font("Courier New", Font.BOLD, 30));
+		
+		mult = new JButton();
+		mult.setText("%");
+		mult.setBounds(195, 115, 50, 50);
+		mult.setBackground(Color.GRAY);
+		mult.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+		mult.setFont(new Font("Courier New", Font.BOLD, 30));
+		
+		add(T2);
+		add(T1);
+		add(limpar);
+		add(raiz);
+		add(porc);
+		add(mult);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
